@@ -37,4 +37,9 @@ export class Deck implements DeckData {
   popTopCard() {
     return this.deck.pop();
   }
+
+  // for testing purposes only:
+  pushCardToTop(card: Card) {
+    this.deck.push(card);
+  }
 }

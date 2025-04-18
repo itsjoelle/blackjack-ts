@@ -2,6 +2,10 @@ import { CardData, DeckData, PlayerAction } from './types';
 import promptSync from 'prompt-sync';
 const prompt = promptSync({ sigint: true });
 
+export function addNums(a: number, b: number): number {
+  return a + b;
+}
+
 export function shuffleArray(array: CardData[]): CardData[] {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));

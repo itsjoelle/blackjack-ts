@@ -3,6 +3,7 @@ import { calcSum, dealCards, showCards, hitOrStandUtil } from './utils';
 import { Deck } from './deck';
 import { CardData } from './types';
 import chalk from 'chalk';
+import { dealersTurn } from './dealersTurn';
 const prompt = promptSync({ sigint: true });
 
 function playersTurn(deck: Deck, playersHand: CardData[]): 'BUST' | undefined {
@@ -38,15 +39,6 @@ function playersTurn(deck: Deck, playersHand: CardData[]): 'BUST' | undefined {
       continue;
     }
     return;
-  }
-}
-
-function dealersTurn(deck: Deck, dealersHand: CardData[]): 'BUST' | undefined {
-  let sum = calcSum(dealersHand);
-  while (sum < 17) {
-    dealCards(deck, dealersHand);
-    sum = calcSum(dealersHand);
-    if (sum > 21) return 'BUST';
   }
 }
 
